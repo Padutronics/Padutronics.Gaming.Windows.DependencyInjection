@@ -2,6 +2,7 @@ using Padutronics.DependencyInjection;
 using Padutronics.Gaming.Graphics;
 using Padutronics.Gaming.Graphics.Resources;
 using Padutronics.Gaming.Graphics.Resources.Brushes;
+using Padutronics.Gaming.Graphics.Resources.Geometries;
 using Padutronics.Gaming.Windows.Graphics;
 using Padutronics.Gaming.Windows.Graphics.Resources.Brushes;
 using Padutronics.Gaming.Windows.Graphics.Resources.Geometries;
@@ -38,6 +39,7 @@ internal sealed class GraphicsContainerModule : IContainerModule
         RegisterNativeResourceFactory<ITextureResourceFactory>(containerBuilder);
 
         RegisterResourceFactory<IBrushFactory, BrushFactory>(containerBuilder);
+        RegisterResourceFactory<IGeometryFactory, GeometryFactory>(containerBuilder);
     }
 
     private void RegisterNativeResource<TResource>(IContainerBuilder containerBuilder)
