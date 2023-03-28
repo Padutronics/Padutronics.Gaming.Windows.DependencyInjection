@@ -1,6 +1,7 @@
 using Padutronics.Conversion.Converters;
 using Padutronics.DependencyInjection;
 using Padutronics.Gaming.Graphics;
+using Padutronics.Gaming.Graphics.Resources.Brushes;
 using Padutronics.Gaming.Graphics.Resources.Geometries;
 using Padutronics.Gaming.Graphics.Resources.Strokes;
 using Padutronics.Gaming.Windows.Conversion.Converters;
@@ -19,6 +20,7 @@ internal sealed class ConversionContainerModule : IContainerModule
         RegisterConverter<CombineMode, D2D1_COMBINE_MODE, CombineModeToD2D1_COMBINE_MODEConverter>(containerBuilder);
         RegisterConverter<DashStyle, D2D1_DASH_STYLE, DashStyleToD2D1_DASH_STYLEConverter>(containerBuilder);
         RegisterConverter<EllipseF, D2D1_ELLIPSE, EllipseFToD2D1_ELLIPSEConverter>(containerBuilder);
+        RegisterConverter<ExtendMode, D2D1_EXTEND_MODE, ExtendModeToD2D1_EXTEND_MODEConverter>(containerBuilder);
     }
 
     private void RegisterConverter<TFrom, TTo, TConverter>(IContainerBuilder containerBuilder)
