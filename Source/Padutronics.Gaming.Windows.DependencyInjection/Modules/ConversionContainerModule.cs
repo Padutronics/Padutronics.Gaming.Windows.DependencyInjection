@@ -25,6 +25,7 @@ internal sealed class ConversionContainerModule : IContainerModule
         RegisterConverter<ExtendMode, D2D1_EXTEND_MODE, ExtendModeToD2D1_EXTEND_MODEConverter>(containerBuilder);
         RegisterConverter<FontStretch, DWRITE_FONT_STRETCH, FontStretchToDWRITE_FONT_STRETCHConverter>(containerBuilder);
         RegisterConverter<FontStyle, DWRITE_FONT_STYLE, FontStyleToDWRITE_FONT_STYLEConverter>(containerBuilder);
+        RegisterConverter<FontWeight, DWRITE_FONT_WEIGHT, FontWeightToDWRITE_FONT_WEIGHTConverter>(containerBuilder);
     }
 
     private void RegisterConverter<TFrom, TTo, TConverter>(IContainerBuilder containerBuilder)
