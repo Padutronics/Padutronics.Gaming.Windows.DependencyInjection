@@ -1,6 +1,7 @@
 using Padutronics.Conversion.Converters;
 using Padutronics.DependencyInjection;
 using Padutronics.Gaming.Graphics;
+using Padutronics.Gaming.Graphics.Resources.Geometries;
 using Padutronics.Gaming.Graphics.Resources.Strokes;
 using Padutronics.Gaming.Windows.Conversion.Converters;
 using Padutronics.Windows.Win32.Api.D2D1;
@@ -14,6 +15,7 @@ internal sealed class ConversionContainerModule : IContainerModule
     {
         RegisterConverter<CapStyle, D2D1_CAP_STYLE, CapStyleToD2D1_CAP_STYLEConverter>(containerBuilder);
         RegisterConverter<Color, D3DCOLORVALUE, ColorToD3DCOLORVALUEConverter>(containerBuilder);
+        RegisterConverter<CombineMode, D2D1_COMBINE_MODE, CombineModeToD2D1_COMBINE_MODEConverter>(containerBuilder);
     }
 
     private void RegisterConverter<TFrom, TTo, TConverter>(IContainerBuilder containerBuilder)
