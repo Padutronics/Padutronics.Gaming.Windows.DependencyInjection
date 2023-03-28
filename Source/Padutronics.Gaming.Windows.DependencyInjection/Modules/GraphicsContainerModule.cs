@@ -13,5 +13,6 @@ internal sealed class GraphicsContainerModule : IContainerModule
         containerBuilder.For<IRenderer>().Use<Renderer>().SingleInstance();
 
         containerBuilder.For<IDeviceFactoryProvider>().Use<DeviceFactoryProvider>().SingleInstance();
+        containerBuilder.For<IDeviceResourceProvider, ISwapChainPresenter>().Use<DeviceResourceProvider>().SingleInstance();
     }
 }
