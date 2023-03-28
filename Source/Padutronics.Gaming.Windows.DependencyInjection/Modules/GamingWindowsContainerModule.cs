@@ -6,5 +6,6 @@ public sealed class GamingWindowsContainerModule : IContainerModule
 {
     public void Load(IContainerBuilder containerBuilder)
     {
+        containerBuilder.IncludeModule<BootstrappingContainerModule>();
     }
 }
