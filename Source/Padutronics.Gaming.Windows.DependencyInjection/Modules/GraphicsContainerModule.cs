@@ -4,6 +4,7 @@ using Padutronics.Gaming.Graphics.Resources;
 using Padutronics.Gaming.Graphics.Resources.Brushes;
 using Padutronics.Gaming.Graphics.Resources.Geometries;
 using Padutronics.Gaming.Graphics.Resources.Strokes;
+using Padutronics.Gaming.Graphics.Resources.Text;
 using Padutronics.Gaming.Windows.Graphics;
 using Padutronics.Gaming.Windows.Graphics.Resources.Brushes;
 using Padutronics.Gaming.Windows.Graphics.Resources.Geometries;
@@ -42,6 +43,7 @@ internal sealed class GraphicsContainerModule : IContainerModule
         RegisterResourceFactory<IBrushFactory, BrushFactory>(containerBuilder);
         RegisterResourceFactory<IGeometryFactory, GeometryFactory>(containerBuilder);
         RegisterResourceFactory<IStrokeStyleFactory, StrokeStyleFactory>(containerBuilder);
+        RegisterResourceFactory<ITextFormatFactory, TextFormatFactory>(containerBuilder);
     }
 
     private void RegisterNativeResource<TResource>(IContainerBuilder containerBuilder)
