@@ -9,5 +9,6 @@ internal sealed class GraphicsContainerModule : IContainerModule
     public void Load(IContainerBuilder containerBuilder)
     {
         containerBuilder.For<IRenderPipeline>().Use<RenderPipeline>().SingleInstance();
+        containerBuilder.For<IRenderView, IRenderViewInitializer, IWindowHandleProvider>().Use<RenderView>().SingleInstance();
     }
 }
