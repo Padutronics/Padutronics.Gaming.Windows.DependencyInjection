@@ -9,6 +9,7 @@ public sealed class GamingWindowsContainerModule : IContainerModule
         containerBuilder
             .IncludeModule<BootstrappingContainerModule>()
             .IncludeModule<ConversionContainerModule>()
-            .IncludeModule<FramesContainerModule>();
+            .IncludeModule<FramesContainerModule>()
+            .IncludeModule<GraphicsContainerModule>();
     }
 }
