@@ -5,6 +5,7 @@ using Padutronics.Gaming.Graphics.Resources.Brushes;
 using Padutronics.Gaming.Graphics.Resources.Geometries;
 using Padutronics.Gaming.Graphics.Resources.Strokes;
 using Padutronics.Gaming.Graphics.Resources.Text;
+using Padutronics.Gaming.Inputs.Keyboards;
 using Padutronics.Gaming.Windows.Conversion.Converters;
 using Padutronics.Geometry;
 using Padutronics.Mathematics.Matrices;
@@ -12,6 +13,7 @@ using Padutronics.Windows.Win32.Api.D2D1;
 using Padutronics.Windows.Win32.Api.DCommon;
 using Padutronics.Windows.Win32.Api.DWrite;
 using Padutronics.Windows.Win32.Api.DxgiType;
+using Padutronics.Windows.Win32.Api.WinUser;
 
 namespace Padutronics.Gaming.Windows.DependencyInjection.Modules;
 
@@ -37,6 +39,7 @@ internal sealed class ConversionContainerModule : IContainerModule
         RegisterConverter<UniformRoundedRectangleF, D2D1_ROUNDED_RECT, UniformRoundedRectangleFToD2D1_ROUNDED_RECTConverter>(containerBuilder);
 
         RegisterConverter<D3DCOLORVALUE, Color, D3DCOLORVALUEToColorConverter>(containerBuilder);
+        RegisterConverter<VK, Key, VKToKeyConverter>(containerBuilder);
     }
 
     private void RegisterConverter<TFrom, TTo, TConverter>(IContainerBuilder containerBuilder)
