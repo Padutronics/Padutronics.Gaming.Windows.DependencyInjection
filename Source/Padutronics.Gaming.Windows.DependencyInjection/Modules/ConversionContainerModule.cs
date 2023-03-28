@@ -35,6 +35,8 @@ internal sealed class ConversionContainerModule : IContainerModule
         RegisterConverter<RectangleF, D2D_RECT_F, RectangleFToD2D_RECT_FConverter>(containerBuilder);
         RegisterConverter<SizeF, D2D_SIZE_F, SizeFToD2D_SIZE_FConverter>(containerBuilder);
         RegisterConverter<UniformRoundedRectangleF, D2D1_ROUNDED_RECT, UniformRoundedRectangleFToD2D1_ROUNDED_RECTConverter>(containerBuilder);
+
+        RegisterConverter<D3DCOLORVALUE, Color, D3DCOLORVALUEToColorConverter>(containerBuilder);
     }
 
     private void RegisterConverter<TFrom, TTo, TConverter>(IContainerBuilder containerBuilder)
