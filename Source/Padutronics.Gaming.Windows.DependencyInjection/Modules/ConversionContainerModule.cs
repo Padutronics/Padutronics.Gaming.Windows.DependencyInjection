@@ -7,7 +7,9 @@ using Padutronics.Gaming.Graphics.Resources.Strokes;
 using Padutronics.Gaming.Graphics.Resources.Text;
 using Padutronics.Gaming.Windows.Conversion.Converters;
 using Padutronics.Geometry;
+using Padutronics.Mathematics.Matrices;
 using Padutronics.Windows.Win32.Api.D2D1;
+using Padutronics.Windows.Win32.Api.DCommon;
 using Padutronics.Windows.Win32.Api.DWrite;
 using Padutronics.Windows.Win32.Api.DxgiType;
 
@@ -27,6 +29,7 @@ internal sealed class ConversionContainerModule : IContainerModule
         RegisterConverter<FontStyle, DWRITE_FONT_STYLE, FontStyleToDWRITE_FONT_STYLEConverter>(containerBuilder);
         RegisterConverter<FontWeight, DWRITE_FONT_WEIGHT, FontWeightToDWRITE_FONT_WEIGHTConverter>(containerBuilder);
         RegisterConverter<LineJoin, D2D1_LINE_JOIN, LineJoinToD2D1_LINE_JOINConverter>(containerBuilder);
+        RegisterConverter<Matrix3x2F, D2D_MATRIX_3X2_F, Matrix3x2FToD2D_MATRIX_3X2_FConverter>(containerBuilder);
     }
 
     private void RegisterConverter<TFrom, TTo, TConverter>(IContainerBuilder containerBuilder)
