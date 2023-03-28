@@ -4,9 +4,11 @@ using Padutronics.Gaming.Graphics;
 using Padutronics.Gaming.Graphics.Resources.Brushes;
 using Padutronics.Gaming.Graphics.Resources.Geometries;
 using Padutronics.Gaming.Graphics.Resources.Strokes;
+using Padutronics.Gaming.Graphics.Resources.Text;
 using Padutronics.Gaming.Windows.Conversion.Converters;
 using Padutronics.Geometry;
 using Padutronics.Windows.Win32.Api.D2D1;
+using Padutronics.Windows.Win32.Api.DWrite;
 using Padutronics.Windows.Win32.Api.DxgiType;
 
 namespace Padutronics.Gaming.Windows.DependencyInjection.Modules;
@@ -21,6 +23,7 @@ internal sealed class ConversionContainerModule : IContainerModule
         RegisterConverter<DashStyle, D2D1_DASH_STYLE, DashStyleToD2D1_DASH_STYLEConverter>(containerBuilder);
         RegisterConverter<EllipseF, D2D1_ELLIPSE, EllipseFToD2D1_ELLIPSEConverter>(containerBuilder);
         RegisterConverter<ExtendMode, D2D1_EXTEND_MODE, ExtendModeToD2D1_EXTEND_MODEConverter>(containerBuilder);
+        RegisterConverter<FontStretch, DWRITE_FONT_STRETCH, FontStretchToDWRITE_FONT_STRETCHConverter>(containerBuilder);
     }
 
     private void RegisterConverter<TFrom, TTo, TConverter>(IContainerBuilder containerBuilder)
