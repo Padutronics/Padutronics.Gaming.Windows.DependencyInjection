@@ -29,11 +29,19 @@ internal sealed class GraphicsContainerModule : IContainerModule
         RegisterNativeResource<StrokeStyleResource>(containerBuilder);
         RegisterNativeResource<TextFormatResource>(containerBuilder);
         RegisterNativeResource<TextureResource>(containerBuilder);
+
+        RegisterNativeResourceFactory<IBrushResourceFactory>(containerBuilder);
     }
 
     private void RegisterNativeResource<TResource>(IContainerBuilder containerBuilder)
         where TResource : class, IResource
     {
         containerBuilder.For<TResource>().UseSelf().InstancePerDependency();
+    }
+
+    private void RegisterNativeResourceFactory<TFactory>(IContainerBuilder containerBuilder)
+        where TFactory : class
+    {
+        containerBuilder.For<TFactory>().UseFactory();
     }
 }
