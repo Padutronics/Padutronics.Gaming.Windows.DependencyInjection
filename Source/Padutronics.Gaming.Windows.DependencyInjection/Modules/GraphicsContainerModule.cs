@@ -34,6 +34,7 @@ internal sealed class GraphicsContainerModule : IContainerModule
         RegisterNativeResourceFactory<IGeometryResourceFactory>(containerBuilder);
         RegisterNativeResourceFactory<IStrokeStyleResourceFactory>(containerBuilder);
         RegisterNativeResourceFactory<ITextFormatResourceFactory>(containerBuilder);
+        RegisterNativeResourceFactory<ITextureResourceFactory>(containerBuilder);
     }
 
     private void RegisterNativeResource<TResource>(IContainerBuilder containerBuilder)
