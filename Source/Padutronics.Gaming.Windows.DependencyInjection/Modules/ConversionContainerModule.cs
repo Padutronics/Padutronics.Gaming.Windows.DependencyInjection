@@ -4,6 +4,7 @@ using Padutronics.Gaming.Graphics;
 using Padutronics.Gaming.Graphics.Resources.Geometries;
 using Padutronics.Gaming.Graphics.Resources.Strokes;
 using Padutronics.Gaming.Windows.Conversion.Converters;
+using Padutronics.Geometry;
 using Padutronics.Windows.Win32.Api.D2D1;
 using Padutronics.Windows.Win32.Api.DxgiType;
 
@@ -17,6 +18,7 @@ internal sealed class ConversionContainerModule : IContainerModule
         RegisterConverter<Color, D3DCOLORVALUE, ColorToD3DCOLORVALUEConverter>(containerBuilder);
         RegisterConverter<CombineMode, D2D1_COMBINE_MODE, CombineModeToD2D1_COMBINE_MODEConverter>(containerBuilder);
         RegisterConverter<DashStyle, D2D1_DASH_STYLE, DashStyleToD2D1_DASH_STYLEConverter>(containerBuilder);
+        RegisterConverter<EllipseF, D2D1_ELLIPSE, EllipseFToD2D1_ELLIPSEConverter>(containerBuilder);
     }
 
     private void RegisterConverter<TFrom, TTo, TConverter>(IContainerBuilder containerBuilder)
