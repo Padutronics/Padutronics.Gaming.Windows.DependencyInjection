@@ -11,5 +11,7 @@ internal sealed class GraphicsContainerModule : IContainerModule
         containerBuilder.For<IRenderPipeline>().Use<RenderPipeline>().SingleInstance();
         containerBuilder.For<IRenderView, IRenderViewInitializer, IWindowHandleProvider>().Use<RenderView>().SingleInstance();
         containerBuilder.For<IRenderer>().Use<Renderer>().SingleInstance();
+
+        containerBuilder.For<IDeviceFactoryProvider>().Use<DeviceFactoryProvider>().SingleInstance();
     }
 }
