@@ -31,6 +31,7 @@ internal sealed class ConversionContainerModule : IContainerModule
         RegisterConverter<LineJoin, D2D1_LINE_JOIN, LineJoinToD2D1_LINE_JOINConverter>(containerBuilder);
         RegisterConverter<Matrix3x2F, D2D_MATRIX_3X2_F, Matrix3x2FToD2D_MATRIX_3X2_FConverter>(containerBuilder);
         RegisterConverter<Offset2F, D2D_POINT_2F, Offset2FToD2D_POINT_2FConverter>(containerBuilder);
+        RegisterConverter<Point2F, D2D_POINT_2F, Point2FToD2D_POINT_2FConverter>(containerBuilder);
     }
 
     private void RegisterConverter<TFrom, TTo, TConverter>(IContainerBuilder containerBuilder)
