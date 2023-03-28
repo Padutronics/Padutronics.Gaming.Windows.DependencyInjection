@@ -1,6 +1,7 @@
 using Padutronics.DependencyInjection;
 using Padutronics.Gaming.Graphics;
 using Padutronics.Gaming.Graphics.Resources;
+using Padutronics.Gaming.Graphics.Resources.Brushes;
 using Padutronics.Gaming.Windows.Graphics;
 using Padutronics.Gaming.Windows.Graphics.Resources.Brushes;
 using Padutronics.Gaming.Windows.Graphics.Resources.Geometries;
@@ -35,6 +36,8 @@ internal sealed class GraphicsContainerModule : IContainerModule
         RegisterNativeResourceFactory<IStrokeStyleResourceFactory>(containerBuilder);
         RegisterNativeResourceFactory<ITextFormatResourceFactory>(containerBuilder);
         RegisterNativeResourceFactory<ITextureResourceFactory>(containerBuilder);
+
+        RegisterResourceFactory<IBrushFactory, BrushFactory>(containerBuilder);
     }
 
     private void RegisterNativeResource<TResource>(IContainerBuilder containerBuilder)
@@ -47,5 +50,12 @@ internal sealed class GraphicsContainerModule : IContainerModule
         where TFactory : class
     {
         containerBuilder.For<TFactory>().UseFactory();
+    }
+
+    private void RegisterResourceFactory<TFactoryInterface, TFactoryImplementation>(IContainerBuilder containerBuilder)
+        where TFactoryInterface : class
+        where TFactoryImplementation : class, TFactoryInterface
+    {
+        containerBuilder.For<TFactoryInterface>().Use<TFactoryImplementation>().SingleInstance();
     }
 }
