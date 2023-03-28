@@ -33,6 +33,7 @@ internal sealed class ConversionContainerModule : IContainerModule
         RegisterConverter<Offset2F, D2D_POINT_2F, Offset2FToD2D_POINT_2FConverter>(containerBuilder);
         RegisterConverter<Point2F, D2D_POINT_2F, Point2FToD2D_POINT_2FConverter>(containerBuilder);
         RegisterConverter<RectangleF, D2D_RECT_F, RectangleFToD2D_RECT_FConverter>(containerBuilder);
+        RegisterConverter<SizeF, D2D_SIZE_F, SizeFToD2D_SIZE_FConverter>(containerBuilder);
     }
 
     private void RegisterConverter<TFrom, TTo, TConverter>(IContainerBuilder containerBuilder)
