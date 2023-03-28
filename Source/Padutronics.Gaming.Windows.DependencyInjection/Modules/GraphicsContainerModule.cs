@@ -4,6 +4,7 @@ using Padutronics.Gaming.Graphics.Resources;
 using Padutronics.Gaming.Windows.Graphics;
 using Padutronics.Gaming.Windows.Graphics.Resources.Brushes;
 using Padutronics.Gaming.Windows.Graphics.Resources.Geometries;
+using Padutronics.Gaming.Windows.Graphics.Resources.Strokes;
 
 namespace Padutronics.Gaming.Windows.DependencyInjection.Modules;
 
@@ -23,6 +24,7 @@ internal sealed class GraphicsContainerModule : IContainerModule
         RegisterNativeResource<LinearGradientBrushResource>(containerBuilder);
         RegisterNativeResource<RadialGradientBrushResource>(containerBuilder);
         RegisterNativeResource<SolidColorBrushResource>(containerBuilder);
+        RegisterNativeResource<StrokeStyleResource>(containerBuilder);
     }
 
     private void RegisterNativeResource<TResource>(IContainerBuilder containerBuilder)
