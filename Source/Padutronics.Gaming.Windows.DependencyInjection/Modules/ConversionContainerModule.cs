@@ -40,6 +40,14 @@ internal sealed class ConversionContainerModule : IContainerModule
 
         RegisterConverter<D3DCOLORVALUE, Color, D3DCOLORVALUEToColorConverter>(containerBuilder);
         RegisterConverter<VK, Key, VKToKeyConverter>(containerBuilder);
+
+        RegisterBidirectionalConverter<Color, D3DCOLORVALUE, ColorToD3DCOLORVALUEBidirectionalConverter>(containerBuilder);
+    }
+
+    private void RegisterBidirectionalConverter<TFrom, TTo, TConverter>(IContainerBuilder containerBuilder)
+        where TConverter : class, IBidirectionalConverter<TFrom, TTo>
+    {
+        containerBuilder.For<IBidirectionalConverter<TFrom, TTo>>().Use<TConverter>().InstancePerDependency();
     }
 
     private void RegisterConverter<TFrom, TTo, TConverter>(IContainerBuilder containerBuilder)
