@@ -3,6 +3,7 @@ using Padutronics.Gaming.Graphics;
 using Padutronics.Gaming.Graphics.Resources;
 using Padutronics.Gaming.Windows.Graphics;
 using Padutronics.Gaming.Windows.Graphics.Resources.Brushes;
+using Padutronics.Gaming.Windows.Graphics.Resources.Geometries;
 
 namespace Padutronics.Gaming.Windows.DependencyInjection.Modules;
 
@@ -18,6 +19,7 @@ internal sealed class GraphicsContainerModule : IContainerModule
         containerBuilder.For<IDeviceResourceProvider, ISwapChainPresenter>().Use<DeviceResourceProvider>().SingleInstance();
 
         RegisterNativeResource<BitmapBrushResource>(containerBuilder);
+        RegisterNativeResource<GeometryResource>(containerBuilder);
     }
 
     private void RegisterNativeResource<TResource>(IContainerBuilder containerBuilder)
