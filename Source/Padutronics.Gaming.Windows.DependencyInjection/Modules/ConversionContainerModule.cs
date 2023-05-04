@@ -25,18 +25,18 @@ internal sealed class ConversionContainerModule : IContainerModule
         RegisterConverter<Color, D3DCOLORVALUE, ColorToD3DCOLORVALUEConverter>(containerBuilder);
         RegisterConverter<CombineMode, D2D1_COMBINE_MODE, CombineModeToD2D1_COMBINE_MODEConverter>(containerBuilder);
         RegisterConverter<DashStyle, D2D1_DASH_STYLE, DashStyleToD2D1_DASH_STYLEConverter>(containerBuilder);
-        RegisterConverter<EllipseF, D2D1_ELLIPSE, EllipseFToD2D1_ELLIPSEConverter>(containerBuilder);
+        RegisterConverter<Ellipse<double>, D2D1_ELLIPSE, EllipseDoubleToD2D1_ELLIPSEConverter>(containerBuilder);
         RegisterConverter<ExtendMode, D2D1_EXTEND_MODE, ExtendModeToD2D1_EXTEND_MODEConverter>(containerBuilder);
         RegisterConverter<FontStretch, DWRITE_FONT_STRETCH, FontStretchToDWRITE_FONT_STRETCHConverter>(containerBuilder);
         RegisterConverter<FontStyle, DWRITE_FONT_STYLE, FontStyleToDWRITE_FONT_STYLEConverter>(containerBuilder);
         RegisterConverter<FontWeight, DWRITE_FONT_WEIGHT, FontWeightToDWRITE_FONT_WEIGHTConverter>(containerBuilder);
         RegisterConverter<LineJoin, D2D1_LINE_JOIN, LineJoinToD2D1_LINE_JOINConverter>(containerBuilder);
-        RegisterConverter<Matrix3x2F, D2D_MATRIX_3X2_F, Matrix3x2FToD2D_MATRIX_3X2_FConverter>(containerBuilder);
-        RegisterConverter<Offset2F, D2D_POINT_2F, Offset2FToD2D_POINT_2FConverter>(containerBuilder);
-        RegisterConverter<Point2F, D2D_POINT_2F, Point2FToD2D_POINT_2FConverter>(containerBuilder);
-        RegisterConverter<RectangleF, D2D_RECT_F, RectangleFToD2D_RECT_FConverter>(containerBuilder);
-        RegisterConverter<SizeF, D2D_SIZE_F, SizeFToD2D_SIZE_FConverter>(containerBuilder);
-        RegisterConverter<UniformRoundedRectangleF, D2D1_ROUNDED_RECT, UniformRoundedRectangleFToD2D1_ROUNDED_RECTConverter>(containerBuilder);
+        RegisterConverter<Matrix3x2<double>, D2D_MATRIX_3X2_F, Matrix3x2DoubleToD2D_MATRIX_3X2_FConverter>(containerBuilder);
+        RegisterConverter<Offset2<double>, D2D_POINT_2F, Offset2DoubleToD2D_POINT_2FConverter>(containerBuilder);
+        RegisterConverter<Point2<double>, D2D_POINT_2F, Point2DoubleToD2D_POINT_2FConverter>(containerBuilder);
+        RegisterConverter<Rectangle<double>, D2D_RECT_F, RectangleDoubleToD2D_RECT_FConverter>(containerBuilder);
+        RegisterConverter<Size<double>, D2D_SIZE_F, SizeDoubleToD2D_SIZE_FConverter>(containerBuilder);
+        RegisterConverter<UniformRoundedRectangle<double>, D2D1_ROUNDED_RECT, UniformRoundedRectangleDoubleToD2D1_ROUNDED_RECTConverter>(containerBuilder);
 
         RegisterConverter<D3DCOLORVALUE, Color, D3DCOLORVALUEToColorConverter>(containerBuilder);
         RegisterConverter<VK, Key, VKToKeyConverter>(containerBuilder);
