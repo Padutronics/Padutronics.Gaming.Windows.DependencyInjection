@@ -3,12 +3,15 @@ using Padutronics.Gaming.Graphics;
 using Padutronics.Gaming.Graphics.Resources;
 using Padutronics.Gaming.Graphics.Resources.Brushes;
 using Padutronics.Gaming.Graphics.Resources.Geometries;
+using Padutronics.Gaming.Graphics.Resources.Pens;
 using Padutronics.Gaming.Graphics.Resources.Text;
+using Padutronics.Gaming.Graphics.Resources.Images;
 using Padutronics.Gaming.Windows.Graphics;
 using Padutronics.Gaming.Windows.Graphics.Resources.Brushes;
 using Padutronics.Gaming.Windows.Graphics.Resources.Geometries;
-using Padutronics.Gaming.Windows.Graphics.Resources.Images;
+using Padutronics.Gaming.Windows.Graphics.Resources.Pens;
 using Padutronics.Gaming.Windows.Graphics.Resources.Text;
+using Padutronics.Gaming.Windows.Graphics.Resources.Images;
 
 namespace Padutronics.Gaming.Windows.DependencyInjection.Modules;
 
@@ -29,6 +32,7 @@ internal sealed class GraphicsContainerModule : IContainerModule
         RegisterNativeResource<EllipseGeometryResource>(containerBuilder);
         RegisterNativeResource<ImageBrushResource>(containerBuilder);
         RegisterNativeResource<LinearGradientBrushResource>(containerBuilder);
+        RegisterNativeResource<PathGeometryResource>(containerBuilder);
         RegisterNativeResource<RadialGradientBrushResource>(containerBuilder);
         RegisterNativeResource<SolidColorBrushResource>(containerBuilder);
         RegisterNativeResource<TextFormatResource>(containerBuilder);
