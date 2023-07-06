@@ -48,6 +48,7 @@ internal sealed class ConversionContainerModule : IContainerModule
 
         RegisterBidirectionalConverter<Color, D3DCOLORVALUE, BidirectionalConverter<Color, D3DCOLORVALUE>>(containerBuilder);
         RegisterBidirectionalConverter<Matrix3x2<double>, D2D_MATRIX_3X2_F, BidirectionalConverter<Matrix3x2<double>, D2D_MATRIX_3X2_F>>(containerBuilder);
+        RegisterBidirectionalConverter<Offset2<double>, D2D_POINT_2F, BidirectionalConverter<Offset2<double>, D2D_POINT_2F>>(containerBuilder);
     }
 
     private void RegisterBidirectionalConverter<TFrom, TTo, TConverter>(IContainerBuilder containerBuilder)
