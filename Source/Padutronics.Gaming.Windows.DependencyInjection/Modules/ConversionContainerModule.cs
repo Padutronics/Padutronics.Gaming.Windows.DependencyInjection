@@ -1,9 +1,8 @@
 using Padutronics.Conversion.Converters;
 using Padutronics.DependencyInjection;
 using Padutronics.Gaming.Graphics;
-using Padutronics.Gaming.Graphics.Resources.Brushes;
 using Padutronics.Gaming.Graphics.Resources.Geometries;
-using Padutronics.Gaming.Graphics.Resources.Strokes;
+using Padutronics.Gaming.Graphics.Resources.Pens;
 using Padutronics.Gaming.Graphics.Resources.Text;
 using Padutronics.Gaming.Inputs.Keyboards;
 using Padutronics.Gaming.Windows.Conversion.Converters;
@@ -26,7 +25,6 @@ internal sealed class ConversionContainerModule : IContainerModule
         RegisterConverter<CombineMode, D2D1_COMBINE_MODE, CombineModeToD2D1_COMBINE_MODEConverter>(containerBuilder);
         RegisterConverter<DashStyle, D2D1_DASH_STYLE, DashStyleToD2D1_DASH_STYLEConverter>(containerBuilder);
         RegisterConverter<Ellipse<double>, D2D1_ELLIPSE, EllipseDoubleToD2D1_ELLIPSEConverter>(containerBuilder);
-        RegisterConverter<ExtendMode, D2D1_EXTEND_MODE, ExtendModeToD2D1_EXTEND_MODEConverter>(containerBuilder);
         RegisterConverter<FontStretch, DWRITE_FONT_STRETCH, FontStretchToDWRITE_FONT_STRETCHConverter>(containerBuilder);
         RegisterConverter<FontStyle, DWRITE_FONT_STYLE, FontStyleToDWRITE_FONT_STYLEConverter>(containerBuilder);
         RegisterConverter<FontWeight, DWRITE_FONT_WEIGHT, FontWeightToDWRITE_FONT_WEIGHTConverter>(containerBuilder);
@@ -40,8 +38,6 @@ internal sealed class ConversionContainerModule : IContainerModule
 
         RegisterConverter<D3DCOLORVALUE, Color, D3DCOLORVALUEToColorConverter>(containerBuilder);
         RegisterConverter<VK, Key, VKToKeyConverter>(containerBuilder);
-
-        RegisterBidirectionalConverter<Color, D3DCOLORVALUE, ColorToD3DCOLORVALUEBidirectionalConverter>(containerBuilder);
     }
 
     private void RegisterBidirectionalConverter<TFrom, TTo, TConverter>(IContainerBuilder containerBuilder)
