@@ -26,6 +26,7 @@ internal sealed class GraphicsContainerModule : IContainerModule
         containerBuilder.For<ITextMeasurer>().Use<TextMeasurer>().SingleInstance();
 
         RegisterNativeResource<BitmapResource>(containerBuilder);
+        RegisterNativeResource<EllipseGeometryResource>(containerBuilder);
         RegisterNativeResource<LinearGradientBrushResource>(containerBuilder);
         RegisterNativeResource<RadialGradientBrushResource>(containerBuilder);
         RegisterNativeResource<SolidColorBrushResource>(containerBuilder);
