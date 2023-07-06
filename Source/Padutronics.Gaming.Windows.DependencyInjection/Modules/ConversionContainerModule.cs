@@ -50,6 +50,7 @@ internal sealed class ConversionContainerModule : IContainerModule
         RegisterBidirectionalConverter<Matrix3x2<double>, D2D_MATRIX_3X2_F, BidirectionalConverter<Matrix3x2<double>, D2D_MATRIX_3X2_F>>(containerBuilder);
         RegisterBidirectionalConverter<Offset2<double>, D2D_POINT_2F, BidirectionalConverter<Offset2<double>, D2D_POINT_2F>>(containerBuilder);
         RegisterBidirectionalConverter<Point2<double>, D2D_POINT_2F, BidirectionalConverter<Point2<double>, D2D_POINT_2F>>(containerBuilder);
+        RegisterBidirectionalConverter<TileMode, D2D1_EXTEND_MODE, BidirectionalConverter<TileMode, D2D1_EXTEND_MODE>>(containerBuilder);
     }
 
     private void RegisterBidirectionalConverter<TFrom, TTo, TConverter>(IContainerBuilder containerBuilder)
