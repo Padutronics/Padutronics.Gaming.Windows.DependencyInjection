@@ -45,6 +45,8 @@ internal sealed class ConversionContainerModule : IContainerModule
         RegisterConverter<D2D_POINT_2F, Point2<double>, D2D_POINT_2FToPoint2DoubleConverter>(containerBuilder);
         RegisterConverter<D2D1_EXTEND_MODE, TileMode, D2D1_EXTEND_MODEToTileModeConverter>(containerBuilder);
         RegisterConverter<VK, Key, VKToKeyConverter>(containerBuilder);
+
+        RegisterBidirectionalConverter<Color, D3DCOLORVALUE, BidirectionalConverter<Color, D3DCOLORVALUE>>(containerBuilder);
     }
 
     private void RegisterBidirectionalConverter<TFrom, TTo, TConverter>(IContainerBuilder containerBuilder)
