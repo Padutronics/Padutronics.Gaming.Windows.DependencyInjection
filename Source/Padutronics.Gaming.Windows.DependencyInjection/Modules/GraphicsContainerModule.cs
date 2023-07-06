@@ -33,6 +33,7 @@ internal sealed class GraphicsContainerModule : IContainerModule
         RegisterNativeResource<PathGeometryResource>(containerBuilder);
         RegisterNativeResource<PenResource>(containerBuilder);
         RegisterNativeResource<RadialGradientBrushResource>(containerBuilder);
+        RegisterNativeResource<RectangleGeometryResource>(containerBuilder);
         RegisterNativeResource<SolidColorBrushResource>(containerBuilder);
         RegisterNativeResource<TextFormatResource>(containerBuilder);
 
