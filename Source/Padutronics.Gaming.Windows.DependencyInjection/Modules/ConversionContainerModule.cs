@@ -40,6 +40,7 @@ internal sealed class ConversionContainerModule : IContainerModule
         RegisterConverter<UniformRoundedRectangle<double>, D2D1_ROUNDED_RECT, UniformRoundedRectangleDoubleToD2D1_ROUNDED_RECTConverter>(containerBuilder);
 
         RegisterConverter<D3DCOLORVALUE, Color, D3DCOLORVALUEToColorConverter>(containerBuilder);
+        RegisterConverter<D2D_MATRIX_3X2_F, Matrix3x2<double>, D2D_MATRIX_3X2_FToMatrix3x2DoubleConverter>(containerBuilder);
         RegisterConverter<VK, Key, VKToKeyConverter>(containerBuilder);
     }
 
