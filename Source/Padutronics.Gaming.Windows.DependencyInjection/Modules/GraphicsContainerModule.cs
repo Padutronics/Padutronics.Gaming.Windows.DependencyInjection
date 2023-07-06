@@ -22,6 +22,8 @@ internal sealed class GraphicsContainerModule : IContainerModule
         containerBuilder.For<IDeviceFactoryProvider>().Use<DeviceFactoryProvider>().SingleInstance();
         containerBuilder.For<IDeviceResourceProvider, ISwapChainPresenter>().Use<DeviceResourceProvider>().SingleInstance();
 
+        containerBuilder.For<ITextMeasurer>().Use<TextMeasurer>().SingleInstance();
+
         RegisterNativeResource<LinearGradientBrushResource>(containerBuilder);
         RegisterNativeResource<RadialGradientBrushResource>(containerBuilder);
         RegisterNativeResource<SolidColorBrushResource>(containerBuilder);
