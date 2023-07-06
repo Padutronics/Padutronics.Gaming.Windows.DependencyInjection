@@ -1,6 +1,7 @@
 using Padutronics.Conversion.Converters;
 using Padutronics.DependencyInjection;
 using Padutronics.Gaming.Graphics;
+using Padutronics.Gaming.Graphics.Resources.Brushes;
 using Padutronics.Gaming.Graphics.Resources.Geometries;
 using Padutronics.Gaming.Graphics.Resources.Pens;
 using Padutronics.Gaming.Graphics.Resources.Text;
@@ -28,6 +29,7 @@ internal sealed class ConversionContainerModule : IContainerModule
         RegisterConverter<FontStretch, DWRITE_FONT_STRETCH, FontStretchToDWRITE_FONT_STRETCHConverter>(containerBuilder);
         RegisterConverter<FontStyle, DWRITE_FONT_STYLE, FontStyleToDWRITE_FONT_STYLEConverter>(containerBuilder);
         RegisterConverter<FontWeight, DWRITE_FONT_WEIGHT, FontWeightToDWRITE_FONT_WEIGHTConverter>(containerBuilder);
+        RegisterConverter<GradientSpreadMethod, D2D1_EXTEND_MODE, GradientSpreadMethodToD2D1_EXTEND_MODEConverter>(containerBuilder);
         RegisterConverter<LineJoin, D2D1_LINE_JOIN, LineJoinToD2D1_LINE_JOINConverter>(containerBuilder);
         RegisterConverter<Matrix3x2<double>, D2D_MATRIX_3X2_F, Matrix3x2DoubleToD2D_MATRIX_3X2_FConverter>(containerBuilder);
         RegisterConverter<Offset2<double>, D2D_POINT_2F, Offset2DoubleToD2D_POINT_2FConverter>(containerBuilder);
