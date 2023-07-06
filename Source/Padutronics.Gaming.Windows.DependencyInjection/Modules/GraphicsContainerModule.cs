@@ -4,6 +4,7 @@ using Padutronics.Gaming.Graphics.Resources;
 using Padutronics.Gaming.Graphics.Resources.Brushes;
 using Padutronics.Gaming.Graphics.Resources.Geometries;
 using Padutronics.Gaming.Graphics.Resources.Images;
+using Padutronics.Gaming.Graphics.Resources.Pens;
 using Padutronics.Gaming.Graphics.Resources.Text;
 using Padutronics.Gaming.Windows.Graphics;
 using Padutronics.Gaming.Windows.Graphics.Resources.Brushes;
@@ -48,6 +49,7 @@ internal sealed class GraphicsContainerModule : IContainerModule
         RegisterResourceFactory<IBrushFactory, BrushFactory>(containerBuilder);
         RegisterResourceFactory<IGeometryFactory, GeometryFactory>(containerBuilder);
         RegisterResourceFactory<IImageFactory, ImageFactory>(containerBuilder);
+        RegisterResourceFactory<IPenFactory, PenFactory>(containerBuilder);
         RegisterResourceFactory<ITextFormatFactory, TextFormatFactory>(containerBuilder);
     }
 
