@@ -43,6 +43,7 @@ internal sealed class ConversionContainerModule : IContainerModule
         RegisterConverter<D2D_MATRIX_3X2_F, Matrix3x2<double>, D2D_MATRIX_3X2_FToMatrix3x2DoubleConverter>(containerBuilder);
         RegisterConverter<D2D_POINT_2F, Offset2<double>, D2D_POINT_2FToOffset2DoubleConverter>(containerBuilder);
         RegisterConverter<D2D_POINT_2F, Point2<double>, D2D_POINT_2FToPoint2DoubleConverter>(containerBuilder);
+        RegisterConverter<D2D1_EXTEND_MODE, TileMode, D2D1_EXTEND_MODEToTileModeConverter>(containerBuilder);
         RegisterConverter<VK, Key, VKToKeyConverter>(containerBuilder);
     }
 
