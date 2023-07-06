@@ -36,6 +36,7 @@ internal sealed class ConversionContainerModule : IContainerModule
         RegisterConverter<Point2<double>, D2D_POINT_2F, Point2DoubleToD2D_POINT_2FConverter>(containerBuilder);
         RegisterConverter<Rectangle<double>, D2D_RECT_F, RectangleDoubleToD2D_RECT_FConverter>(containerBuilder);
         RegisterConverter<Size<double>, D2D_SIZE_F, SizeDoubleToD2D_SIZE_FConverter>(containerBuilder);
+        RegisterConverter<TileMode, D2D1_EXTEND_MODE, TileModeToD2D1_EXTEND_MODEConverter>(containerBuilder);
         RegisterConverter<UniformRoundedRectangle<double>, D2D1_ROUNDED_RECT, UniformRoundedRectangleDoubleToD2D1_ROUNDED_RECTConverter>(containerBuilder);
 
         RegisterConverter<D3DCOLORVALUE, Color, D3DCOLORVALUEToColorConverter>(containerBuilder);
