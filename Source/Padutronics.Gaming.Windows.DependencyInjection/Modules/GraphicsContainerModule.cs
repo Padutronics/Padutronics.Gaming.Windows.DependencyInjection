@@ -7,6 +7,7 @@ using Padutronics.Gaming.Graphics.Resources.Text;
 using Padutronics.Gaming.Windows.Graphics;
 using Padutronics.Gaming.Windows.Graphics.Resources.Brushes;
 using Padutronics.Gaming.Windows.Graphics.Resources.Geometries;
+using Padutronics.Gaming.Windows.Graphics.Resources.Images;
 using Padutronics.Gaming.Windows.Graphics.Resources.Text;
 
 namespace Padutronics.Gaming.Windows.DependencyInjection.Modules;
@@ -24,6 +25,7 @@ internal sealed class GraphicsContainerModule : IContainerModule
 
         containerBuilder.For<ITextMeasurer>().Use<TextMeasurer>().SingleInstance();
 
+        RegisterNativeResource<BitmapResource>(containerBuilder);
         RegisterNativeResource<LinearGradientBrushResource>(containerBuilder);
         RegisterNativeResource<RadialGradientBrushResource>(containerBuilder);
         RegisterNativeResource<SolidColorBrushResource>(containerBuilder);
